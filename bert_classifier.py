@@ -8,7 +8,7 @@ from bert_dataset import CustomDataset
 
 class BertClassifier:
 
-    def __init__(self, model_path, tokenizer_path, n_classes=2, epochs=1, model_save_path='/content/bert.pt'):
+    def __init__(self, model_path, tokenizer_path, n_classes=3, epochs=1, model_save_path='/content/bert.pt'):
         self.model = BertForSequenceClassification.from_pretrained(model_path)
         self.tokenizer = BertTokenizer.from_pretrained(tokenizer_path)
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
