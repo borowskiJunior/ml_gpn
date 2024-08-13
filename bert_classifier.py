@@ -25,8 +25,8 @@ class BertClassifier:
         self.valid_set = CustomDataset(X_valid, y_valid, self.tokenizer)
 
         # create data loaders
-        self.train_loader = DataLoader(self.train_set, batch_size=2, shuffle=True)
-        self.valid_loader = DataLoader(self.valid_set, batch_size=2, shuffle=True)
+        self.train_loader = DataLoader(self.train_set, batch_size=3, shuffle=True)
+        self.valid_loader = DataLoader(self.valid_set, batch_size=3, shuffle=True)
 
         # helpers initialization
         self.optimizer = AdamW(self.model.parameters(), lr=2e-5, correct_bias=False)
